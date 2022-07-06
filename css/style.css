@@ -46,6 +46,16 @@
         min-height: 100vh;
         display: block;
         opacity: 1;
+        transition: all 0.3s ease;
+        left: 0;
+    }
+
+    .section.open{
+        left: 270px;
+    }
+
+    .section.back-section{
+        z-index: 1;
     }
 
     .hidden{
@@ -151,6 +161,7 @@
         justify-content: center;
         align-items: center;
         z-index: 10;
+        transition: all 0.3 ease;
     }
 
     .aside .logo{
@@ -207,10 +218,11 @@
         top: 20px;
         border-radius: 5px;
         background: var(--bg-black-100);
-        display: flex;
+        display:flex;
         align-items: center;
         justify-content: center;
         transition: all 0.3s ease;
+        
 
     }
 
@@ -224,7 +236,7 @@
 
     .aside .nav-toggler.open span{
         background-color: transparent;
-    }
+    }    
 
     .aside .nav-toggler span::before{
         content: '';
@@ -243,6 +255,7 @@
         top: 0;
     }
 
+
     .aside .nav-toggler span::after{
         content: '';
         height: 2px;
@@ -259,6 +272,8 @@
         transform: rotate(-45deg);
         top: 0;
     }
+    
+
 
     .aside .nav {
         margin-top: 50px;
@@ -740,12 +755,29 @@
         padding: 0 50px;
     }
 
-    @media (max-width:1200px) {
+    @media (max-width:1199px) {
         .aside{
             left: -270px ;
         }
+
+        .aside .nav-toggler{
+            display: flex;
+            left: 30px;
+        }
+        .aside.open{
+            left: 0;
+        }
+
+        .aside .nav-toggler.open{
+            left: 300px;
+        }
+
+        .section{
+            left: 0;
+        }
         .main-content{
-            padding-left: 0;
+            padding-left: 20px;
+            
         }
         .about .about-content .personal-info .info-item p span{
             display: block;
@@ -771,6 +803,8 @@
         }
         .home .home-img{
             display: block;
+            top: 50px;
+           
         }
     }
 
